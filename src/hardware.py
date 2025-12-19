@@ -53,3 +53,26 @@ def cleanup():
     if lcd:
         lcd.clear()
     GPIO.cleanup()
+
+if __name__ == "__main__":
+    print("[TEST] Testing Hardware...")
+    try:
+        display_message("Hardware Test", "Buzzer & LCD")
+        print("[TEST] LCD should show text now.")
+        
+        print("[TEST] Testing Buzzer (Success Beep)...")
+        buzz_success()
+        time.sleep(1)
+        
+        print("[TEST] Testing Buzzer (Error Beep)...")
+        buzz_error()
+        time.sleep(1)
+        
+        display_message("Test Complete", "Good Luck!")
+        print("[TEST] Test Complete.")
+        time.sleep(2)
+        
+    except KeyboardInterrupt:
+        pass
+    finally:
+        cleanup()
