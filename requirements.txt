@@ -1,0 +1,7 @@
+opencv-python
+face-recognition
+numpy
+pandas
+openpyxl
+RPLCD
+smbus2
